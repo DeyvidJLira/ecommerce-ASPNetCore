@@ -1,0 +1,20 @@
+@model ecommerce_aspnet.Models.Product
+
+<h3>Produto visualizar</h3>
+
+:)
+
+Razor: 
+@{
+    string nome = "Deyvid Jaguaribe";
+}
+
+@nome
+<br />
+<h2>Produto</h2>
+<b>Nome:</b> @Model.Name <br/>
+<b>Descrição:</b> @Model.Description <br/>
+<b>Valor:</b> @Model.Value.ToString("C")
+
+
+Todos os direitos reservados &copy; @DateTime.Now.Year
