@@ -8,5 +8,14 @@ namespace ecommerce_aspnet.Controllers {
         public IActionResult Contact() {
             return View();
         }
+        public IActionResult Login() {
+            return View();
+        }
+        public IActionResult RegisterClient() {
+            return View();
+        }
+        public IActionResult Cart() {
+            return View();
+        }
     }
 }
