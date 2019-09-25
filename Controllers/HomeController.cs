@@ -29,14 +29,17 @@ namespace ecommerce_aspnet.Controllers {
                     bool result = EmailService.SendContact(contact);
                     if(result)
                         ViewData["MSG_S"] = "Mensagem de contato enviada com sucesso!";
-                    else
+                    else {
                         ViewData["MSG_E"] = "Ops! Tivemos um erro, tente novamente mais tarde! Cód. 15";
+                        ViewData["CONTACT"] = contact;
+                    }
                 } else {
                     StringBuilder messages = new StringBuilder();
                     foreach(var message in listMessagesValidation) {
-                        messages.Append(message.ErrorMessage);
+                        messages.Append(message.ErrorMessage +  "<br />");
                     }
                     ViewData["MSG_E"] = messages.ToString();
+                    ViewData["CONTACT"] = contact;
                 }
             } catch (Exception e) {
                 ViewData["MSG_E"] = "Ops! Tivemos um erro, tente novamente mais tarde! Cód. 05";

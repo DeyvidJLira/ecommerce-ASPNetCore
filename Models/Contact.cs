@@ -8,18 +8,18 @@ namespace ecommerce_aspnet.Models {
             this.Message = message;
         }
         
-        [Required]
-        [MinLength(4)]
+        [Required(ErrorMessageResourceType = typeof(ecommerce_aspnet.Libraries.Lang.Messages), ErrorMessageResourceName="MSG_E001")]
+        [MinLength(4, ErrorMessageResourceType = typeof(ecommerce_aspnet.Libraries.Lang.Messages), ErrorMessageResourceName="MSG_E002")]
         [MaxLength(30)]
         public string Name {get; set;}
 
-        [Required]
-        [EmailAddress]
+        [Required(ErrorMessageResourceType = typeof(ecommerce_aspnet.Libraries.Lang.Messages), ErrorMessageResourceName="MSG_E001")]
+        [EmailAddress(ErrorMessageResourceType = typeof(ecommerce_aspnet.Libraries.Lang.Messages), ErrorMessageResourceName="MSG_E004")]
         public string Email { get; set; }
 
-        [Required]
-        [MinLength(6)]
-        [MaxLength(10)]
+        [Required(ErrorMessageResourceType = typeof(ecommerce_aspnet.Libraries.Lang.Messages), ErrorMessageResourceName="MSG_E001")]
+        [MinLength(6, ErrorMessageResourceType = typeof(ecommerce_aspnet.Libraries.Lang.Messages), ErrorMessageResourceName="MSG_E002")]
+        [MaxLength(10, ErrorMessageResourceType = typeof(ecommerce_aspnet.Libraries.Lang.Messages), ErrorMessageResourceName="MSG_E003")]
         public string Message { get; set; }
     }
 }

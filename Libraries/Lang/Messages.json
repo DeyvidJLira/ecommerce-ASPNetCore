@@ -1,0 +1,6 @@
+{
+    "MSG_E001" : "O campo {0} é obrigatório!",
+    "MSG_E002" : "O campo {0} deve ter no mínimo {1} caracteres!",
+    "MSG_E003" : "O campo {0} deve ter no máximo {1} caracteres!",
+    "MSG_E004" : "O campo {0} não é válido!"
+}

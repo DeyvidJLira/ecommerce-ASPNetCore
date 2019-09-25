@@ -1,5 +1,6 @@
 @{
     ViewData["Title"] = "Contato";
+    ecommerce_aspnet.Models.Contact contact = (ecommerce_aspnet.Models.Contact)ViewData["CONTACT"];
 }
 
 <main role="main">
@@ -38,7 +39,7 @@
                             }
 
                             @if(ViewData["MSG_E"] != null) {
-                                <p class="alert alert-danger">@ViewData["MSG_E"]</p>
+                                <p class="alert alert-danger">@Html.Raw(ViewData["MSG_E"])</p>
                             }
                             
                             <form role="formContact" method="post" action="/Home/ContactAction">
@@ -49,7 +50,7 @@
                                             <span class="input-group-text"><i class="fa fa-user"></i></span>
                                         </div>
                                         <input id="name" type="text" class="form-control" name="name" placeholder="Nome"
-                                            required="">
+                                            required="" value="@(contact != null ? contact.Name : "")">
                                     </div>
                                 </div>
 
@@ -59,7 +60,8 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa fa-at"></i></span>
                                         </div>
-                                        <input id="email" type="text" class="form-control" name="email" placeholder="E-mail">
+                                        <input id="email" type="text" class="form-control" name="email" placeholder="E-mail"
+                                            value="@(contact != null ? contact.Email : "")">
                                     </div>
                                 </div>
 
@@ -68,7 +70,8 @@
                                         <div class="form-group">
                                             <label for="message"><span class="hidden-xs">Mensagem</span> </label>
                                             <div class="form-inline">
-                                                <textarea id="message" name="message" class="form-control" style="width:100%"></textarea>
+                                                <textarea id="message" name="message" class="form-control" style="width:100%"
+                                                    value="@(contact != null ? contact.Message : "")"></textarea>
                                             </div>
                                         </div>
                                     </div>
