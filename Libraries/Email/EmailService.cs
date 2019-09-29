@@ -12,7 +12,7 @@ namespace ecommerce_aspnet.Libraries.Email {
 
             HttpClient client = new HttpClient(); 
 
-            System.Net.Http.HttpResponseMessage response = client.PostAsync("https://us-central1-deyvidjlira-personal.cloudfunctions.net/api/mail/formContact", content).Result;
+            System.Net.Http.HttpResponseMessage response = client.PostAsync("https://us-central1-deyvidjlira-personal.cloudfunctions.net/api/ecommerce/mail/contact", content).Result;
             if(response.StatusCode == System.Net.HttpStatusCode.OK) {
                 return true;
             } else {

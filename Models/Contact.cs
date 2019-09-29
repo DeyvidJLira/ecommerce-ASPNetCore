@@ -19,7 +19,7 @@ namespace ecommerce_aspnet.Models {
 
         [Required(ErrorMessageResourceType = typeof(ecommerce_aspnet.Libraries.Lang.Messages), ErrorMessageResourceName="MSG_E001")]
         [MinLength(6, ErrorMessageResourceType = typeof(ecommerce_aspnet.Libraries.Lang.Messages), ErrorMessageResourceName="MSG_E002")]
-        [MaxLength(10, ErrorMessageResourceType = typeof(ecommerce_aspnet.Libraries.Lang.Messages), ErrorMessageResourceName="MSG_E003")]
+        [MaxLength(500, ErrorMessageResourceType = typeof(ecommerce_aspnet.Libraries.Lang.Messages), ErrorMessageResourceName="MSG_E003")]
         public string Message { get; set; }
     }
 }
